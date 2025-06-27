@@ -177,7 +177,7 @@ wheels = [
 ]
 
 [[package]]
-name = "gitinspectorgui"
+name = "gitinspectorgui-old"
 version = "0.4.5"
 source = { editable = "." }
 dependencies = [
@@ -261,10 +261,10 @@ wheels = [
 [[package]]
 name = "idna"
 version = "3.10"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz", hash = "sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9", size = 190490, upload-time = "2024-09-15T18:07:39.745Z" }
+source = { registry = "https://test.pypi.org/simple/" }
+sdist = { url = "https://test-files.pythonhosted.org/packages/aa/9d/4b4896657990a3d412f97462d8b594d5a0feb0e33744e00dd37895324e10/idna-3.10.tar.gz", hash = "sha256:6737ab4c179b1d16b0387b2e31876774c2c801d7153a8b07eb210b0deb2335e8", size = 190530, upload-time = "2025-05-02T00:16:17.201Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl", hash = "sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3", size = 70442, upload-time = "2024-09-15T18:07:37.964Z" },
+    { url = "https://test-files.pythonhosted.org/packages/99/43/801c916cf8c23d4c7feee59de1dbd126babfafbeded3e0506b74c1987796/idna-3.10-py3-none-any.whl", hash = "sha256:2b4f58b3e7035047d3c89bbd142b6af02530c3b9353421137c9eab2b065db562", size = 70489, upload-time = "2025-05-02T00:16:15.281Z" },
 ]
 
 [[package]]
