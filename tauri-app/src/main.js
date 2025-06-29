@@ -1,18 +1,26 @@
 const { invoke } = window.__TAURI__.core;
+const { open } = window.__TAURI__.dialog;
 
-let greetInputEl;
-let greetMsgEl;
-
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
+async function run_gitinspectorgui(repoPath) {
+  return await invoke("run_gitinspector_gui", { repoDir: repoPath });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form").addEventListener("submit", (e) => {
+  document.querySelector("#greet-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    greet();
+    const repoPath = document.getElementById("repo-path").value;
+    await run_gitinspectorgui(repoPath);
+    document.getElementById("switchFile").click();
+  });
+
+
+  document.getElementById("select-folder-btn").addEventListener("click", async () => {
+    const folderPath = await window.__TAURI__.dialog.open({
+          directory: true,
+          multiple: false,
+        });
+        console.log('Selected folder:', folderPath);
+        document.getElementById('repo-path').value = folderPath || 'No folder selected';
   });
 });
+
