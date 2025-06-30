@@ -1,28 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
-    <script type="module" src="/main.js" defer></script>
-  </head>
 
-  <body>
-    <main class="container">
-      <h1>Welcome to Tauri</h1>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tauri App</title>
+  <script type="module" src="/main.js" defer></script>
+</head>
 
-      <form class="row" id="greet-form">
-        <!-- Make me a folder selecting input -->
-        <label for="repo-input">Select a repository:</label>
-        <!-- Make me a folder selection input that just extracts the folder directory (absolute path) -->
-        <button type="button" id="select-folder-btn">Select Repository Folder</button>
-        <input type="text" id="repo-path" readonly placeholder="No folder selected" />
+<body>
+  <main class="container">
+    <h1>IPC Architecture Demo</h1>
+    <p>This demo works by communicating with the original CLI over IPC, by parsing the HTML output. It aims to show that the IPC implementation as is implemented here, not only works, but also is not limited to just JSON.</p>
+    <br>
+    <form class="row" id="greet-form">
+      <!-- Make me a folder selecting input -->
+      <label for="repo-input">Select a repository:</label>
+      <!-- Make me a folder selection input that just extracts the folder directory (absolute path) -->
+      <button type="button" id="select-folder-btn">Select Repository Folder</button>
+      <input type="text" id="repo-path" readonly placeholder="No folder selected" />
 
-        <button type="submit">Analyse Repository</button>
-      </form>
-      <p id="greet-msg"></p>
-      <a id="switchFile" href="gitinspect.html" style="display:none;"><button>Open Analysis</button></a>
-    </main>
-  </body>
+      <button type="submit">Analyse Repository</button>
+    </form>
+    <p id="greet-msg"></p>
+    <a id="switchFile" href="gitinspect.html" style="display:none;"><button>Open Analysis</button></a>
+  </main>
+  <div id="report-page" style="display:none">
+    <iframe id="report-iframe" style="width:100%;height:100vh;border:none"></iframe>
+  </div>
+</body>
+
 </html>
