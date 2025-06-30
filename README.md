@@ -50,3 +50,21 @@ In order to run the stack in developer mode, you should do the following:
 1. Make sure you have the project open in your IDE, with the terminal in the main directory (gitinspector-IPC-PoC).
 2. Run: `cd .\tauri-app\` to change directory into the Tauri directory.
 3. To run Tauri, run `npm run tauri dev` in the terminal.
+
+# Next Steps
+To extend upon this idea in the main gitinspectorgui repository, we would need to reintroduce the CLI from the gitinspectorgui-old repository. 
+We want to reintroduce this CLI version because:
+- it functions properly, any issues have been documented in its repository
+- the codebase is well structured
+- The codebase is well documented
+- We would still offer both a CLI & GUI for gitinspectorgui, of which the CLI is already (still) working
+
+Then we would need to rewrite (small parts of) the CLI to eliminate its dependencies on files outside its codebase, as this will make building it significantly easier.
+
+Steps after (or during) the above include:
+- Setting up a proper test suite for the CLI. This is important as we will test the CLI separately from the Tauri stack.
+- Finding a more streamlined way to build the project, as we intend to both release the project on PyPI and as executable on GitHub.
+- Once found, create proper CI/CD pipelines to automate the building, releasing and docs updating process. 
+- Integrate the old CLI documentation into the new one.
+
+Note, this list is not exhaustive.
