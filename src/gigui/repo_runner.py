@@ -74,6 +74,7 @@ class RepoRunner(RepoBlameTablesSoup, RepoHTML, Book):
             if Keys.html in self.args.file_formats:
                 logfile(f"{outfile_name}.html")
                 html_code = self.get_html()
+                log(html_code)
                 with open(outfilestr + ".html", "w", encoding="utf-8") as f:
                     f.write(html_code)
             self.queues.task_done.put(self.name)

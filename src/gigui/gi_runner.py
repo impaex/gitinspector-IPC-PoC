@@ -146,7 +146,7 @@ class GIRunner(GiRunnerBase):
             i += 1
             if self.len_repos > 1:
                 logger.info(f"    {repo_name}: analysis done {i} of {self.len_repos}")
-        log_end_time(self.start_time)
+        # log_end_time(self.start_time)
 
         i = 0
         if self.args.view == AUTO and self.args.file_formats:
