@@ -45,3 +45,8 @@ This is included from Windows 10 onwards, so should be already installed.
    2. `npm install`: Install the Tauri App dependencies.
    3. `npm run tauri dev`: Run the Tauri Development server. The initial run may take a while, as it will be downloading and compiling a lot of dependencies. Once done, it should open a window.
 
+# How To Run
+In order to run the stack in developer mode, you should do the following:
+1. Make sure you have the project open in your IDE, with the terminal in the main directory (gitinspector-IPC-PoC).
+2. Run: `cd .\tauri-app\` to change directory into the Tauri directory.
+3. To run Tauri, run `npm run tauri dev` in the terminal.
