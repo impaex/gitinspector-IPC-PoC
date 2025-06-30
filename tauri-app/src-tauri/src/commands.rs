@@ -31,21 +31,7 @@ pub fn run_gitinspector_gui(repo_dir: String) -> Result<String, String> {
         ));
     }
 
-    // Print the output in the terminal
-    println!(
-        "Command succeeded with stdout:\n{}",
-        String::from_utf8_lossy(&output.stdout)
-    );
-
-    let html_path = PathBuf::from(format!("{}-gitinspect.html", repo_dir));
-    let public_path = PathBuf::from("../src/gitinspect.html".to_string()); // adjust as needed
-
-    if html_path.exists() {
-        // Copy to public directory
-        fs::copy(&html_path, &public_path)
-            .map_err(|e| format!("Failed to copy HTML file: {}", e))?;
-        Ok("gitinspect.html".to_string())
-    } else {
-        Err("HTML file not found".into())
-    }
+    // Return the HTML code from stdout as a String
+    let html_code = String::from_utf8_lossy(&output.stdout).to_string();
+    Ok(html_code)
 }
